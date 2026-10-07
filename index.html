@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT MAROA TUNGGA ABADI - General Supplier and Contractors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#7e83d8',
+                            blue: '#4a90e2',
+                            cyan: '#71ccf0',
+                            dark: '#1e293b',
+                            darker: '#0f172a'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-brand': 'linear-gradient(135deg, #7e83d8 0%, #4a90e2 50%, #71ccf0 100%)',
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1541888086225-ee5a975cc3bc?q=80&w=2070&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient {
+            background: linear-gradient(135deg, #7e83d8 0%, #4a90e2 50%, #71ccf0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.7) 50%, rgba(15, 23, 42, 0.4) 100%);
+        }
+
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: radial-gradient(#4a90e2 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .shape-blob {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(126, 131, 216, 0.2) 0%, rgba(113, 204, 240, 0.2) 100%);
+            filter: blur(40px);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-gray-50 overflow-x-hidden">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="block">
+                        <img src="LOGO MAROA.png" alt="PT MAROA TUNGGA ABADI Logo"
+                            class="h-10 md:h-12 w-auto object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-brand-blue font-semibold border-b-2 border-brand-blue pb-1">Beranda</a>
+                    <a href="#tentang"
+                        class="text-gray-600 hover:text-brand-blue transition duration-300 font-medium">Tentang Kami</a>
+                    <a href="#armada"
+                        class="text-gray-600 hover:text-brand-blue transition duration-300 font-medium">Layanan &
+                        Armada</a>
+                    <a href="#mitra"
+                        class="text-gray-600 hover:text-brand-blue transition duration-300 font-medium">Mitra &
+                        Klien</a>
+                    <a href="#kontak"
+                        class="bg-gradient-brand text-white px-6 py-2.5 rounded-full font-medium hover:shadow-lg hover:shadow-blue-200 transition duration-300 transform hover:-translate-y-0.5">Hubungi
+                        Kami</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+                        class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2 border-t border-gray-100 pt-2">
+                <a href="#" class="block px-3 py-2 text-brand-blue font-semibold">Beranda</a>
+                <a href="#tentang" class="block px-3 py-2 text-gray-600 hover:text-brand-blue">Tentang Kami</a>
+                <a href="#armada" class="block px-3 py-2 text-gray-600 hover:text-brand-blue">Layanan & Armada</a>
+                <a href="#mitra" class="block px-3 py-2 text-gray-600 hover:text-brand-blue">Mitra & Klien</a>
+                <a href="#kontak" class="block px-3 py-2 text-brand-blue font-medium">Hubungi Kami</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative bg-brand-darker h-[600px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat opacity-60"></div>
+        <div class="absolute inset-0 hero-overlay"></div>
+
+        <div class="bg-pattern"></div>
+        <div class="shape-blob w-96 h-96 -top-20 -left-20"></div>
+        <div class="shape-blob w-[500px] h-[500px] -bottom-40 -right-20"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-3xl">
+                <p class="text-brand-cyan font-semibold tracking-wider uppercase mb-3 drop-shadow-md">PT MAROA TUNGGA
+                    ABADI</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
+                    Membangun Masa Depan dengan <br class="hidden lg:block" />Integritas, Kualitas, dan Keandalan.
+                </h1>
+                <p class="text-gray-300 text-lg mb-8 max-w-xl leading-relaxed">
+                    Penyedia layanan konstruksi, general supplier, dan sewa unit operasional tambang/proyek terpercaya
+                    di seluruh wilayah Sulawesi dan Indonesia.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="https://wa.me/6281295934926?text=Halo%20Bapak%20Surya%20Andika,%20saya%20tertarik%20dengan%20layanan%20PT%20Maroa%20Tungga%20Abadi."
+                        target="_blank"
+                        class="bg-gradient-brand text-white px-8 py-3 rounded-full font-medium text-center hover:shadow-lg hover:shadow-blue-500/30 transition duration-300 transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Hubungi via WhatsApp</span>
+                    </a>
+                    <a href="#armada"
+                        class="border-2 border-brand-cyan text-white px-8 py-3 rounded-full font-medium text-center hover:bg-brand-cyan hover:bg-opacity-10 transition duration-300">
+                        Jelajahi Armada & Layanan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    <span class="text-brand-blue font-semibold uppercase tracking-wider text-sm">Tentang
+                        Perusahaan</span>
+                    <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-6">Mitra Strategis Terpercaya untuk Proyek Skala
+                        Besar</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        <strong>PT MAROA TUNGGA ABADI</strong> merupakan badan usaha resmi yang berdedikasi tinggi di
+                        bidang <i>General Supplier</i> dan Kontraktor. Kami hadir untuk memenuhi kebutuhan pengadaan
+                        material, pekerjaan konstruksi, serta penyewaan armada operasional dan logistik berperforma
+                        tinggi.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                        Berbekal pengalaman bertahun-tahun serta komitmen kuat terhadap keselamatan kerja dan standar
+                        industri, kami telah dipercaya menangani berbagai korporasi multinasional dan pertambangan
+                        besar, khususnya di seluruh wilayah Sulawesi.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-6 pt-4 border-t border-gray-100">
+                        <div>
+                            <h3 class="text-4xl font-bold text-gradient mb-1">5+</h3>
+                            <p class="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Tahun
+                                Pengalaman</p>
+                        </div>
+                        <div>
+                            <h3 class="text-4xl font-bold text-gradient mb-1">150+</h3>
+                            <p class="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Proyek
+                                Selesai</p>
+                        </div>
+                        <div>
+                            <h3 class="text-4xl font-bold text-gradient mb-1">14+</h3>
+                            <p class="text-xs md:text-sm text-gray-500 font-medium uppercase tracking-wider">Klien
+                                Korporat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+                    <div
+                        class="absolute inset-0 bg-brand-blue opacity-10 group-hover:opacity-0 transition duration-500">
+                    </div>
+                    <img src="OPERASIONAL.jpg" alt="Aktivitas Operasional PT Maroa Tungga Abadi"
+                        class="w-full h-[450px] object-cover transform group-hover:scale-105 transition duration-700">
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-cyan rounded-full opacity-40 blur-3xl">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="armada" class="py-20 bg-gray-50 relative border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-blue font-semibold uppercase tracking-wider text-sm">Layanan Unggulan</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-4">Sewa Armada & Kendaraan Proyek Tambang</h2>
+                <div class="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">Kami menyediakan penyewaan unit kendaraan operasional
+                    lapangan maupun tambang dengan standar keselamatan ketat, perawatan rutin berkala, serta performa
+                    prima di medan berat.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Vehicle 1 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-gray-100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="HILUX.jpg" alt="Toyota Hilux 4x4"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-3 right-3 bg-brand-darker/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium">
+                            4x4 Lapangan</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Toyota Hilux 4x4</h3>
+                        <p class="text-sm text-gray-500 mb-4">Unit double cabin handal untuk mobilitas inspeksi &
+                            pengawasan area proyek.</p>
+                        <a href="https://wa.me/6281295934926?text=Halo,%20saya%20ingin%20bertanya%20mengenai%20sewa%20Toyota%20Hilux%204x4."
+                            target="_blank"
+                            class="text-brand-blue font-semibold text-sm hover:underline flex items-center space-x-1">
+                            <span>Sewa Unit Ini</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-gray-100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="TRITON.jpg" alt="Mitsubishi Triton 4x4"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-3 right-3 bg-brand-darker/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium">
+                            Double Cabin</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Mitsubishi Triton 4x4</h3>
+                        <p class="text-sm text-gray-500 mb-4">Ketangguhan maksimal untuk medan terjal pertambangan dan
+                            perkebunan.</p>
+                        <a href="https://wa.me/6281295934926?text=Halo,%20saya%20ingin%20bertanya%20mengenai%20sewa%20Mitsubishi%20Triton."
+                            target="_blank"
+                            class="text-brand-blue font-semibold text-sm hover:underline flex items-center space-x-1">
+                            <span>Sewa Unit Ini</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-gray-100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="ISUZU.jpg" alt="Isuzu ELF Microbus 20 Seat"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-3 right-3 bg-brand-darker/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium">
+                            20 Seat Bus</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Isuzu ELF Microbus</h3>
+                        <p class="text-sm text-gray-500 mb-4">Kapasitas 20 tempat duduk, nyaman dan aman untuk
+                            mobilisasi karyawan.</p>
+                        <a href="https://wa.me/6281295934926?text=Halo,%20saya%20ingin%20bertanya%20mengenai%20sewa%20Microbus%20Isuzu%2020%20Seat."
+                            target="_blank"
+                            class="text-brand-blue font-semibold text-sm hover:underline flex items-center space-x-1">
+                            <span>Sewa Unit Ini</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-gray-100">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="ISUZU 1.jpg" alt="Bus Karyawan Tambang"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-3 right-3 bg-brand-darker/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full font-medium">
+                            Standar Tambang</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Bus Karyawan Operasional</h3>
+                        <p class="text-sm text-gray-500 mb-4">Dilengkapi atribut keselamatan resmi siap masuk area site
+                            pertambangan.</p>
+                        <a href="https://wa.me/6281295934926?text=Halo,%20saya%20ingin%20bertanya%20mengenai%20Bus%20Karyawan%20Tambang."
+                            target="_blank"
+                            class="text-brand-blue font-semibold text-sm hover:underline flex items-center space-x-1">
+                            <span>Sewa Unit Ini</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mitra" class="py-20 bg-white relative border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-blue font-semibold uppercase tracking-wider text-sm">Jejak Kepercayaan</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-4">Mitra & Klien Kepercayaan Kami</h2>
+                <div class="w-24 h-1 bg-gradient-brand mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">PT Maroa Tungga Abadi bangga telah dipercaya sebagai
+                    supplier dan penyedia layanan operasional bagi perusahaan-perusahaan terkemuka di Indonesia:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+
+                <!-- Client Card -->
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT TRAKINDO UTAMA</h4>
+                        <span class="text-xs text-gray-500 font-medium">(Semua Cabang Sulawesi)</span>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT SINAR TERANG MANDIRI</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT WARGI SENTOSA</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT NATURAL PERSADA MANDIRI</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT TEMPOPRES MINING INDONESIA</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT TEMPOPRESS INTERNATIONAL DELIVERY
+                        </h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT TIGA PILAR ENERGI</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT MULTIWIRA MITRA PERKASA</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT GUNUNG SAMUDRA INDONESIA</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT LEIGHTON CONTRACTOR</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT MEGA TATA LESTARI</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT KOREA ENERGY PALU</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT CIPTA KRIDATAMA BAHARI</h4>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gray-50 p-5 rounded-xl shadow-sm border border-gray-100 flex items-center space-x-4 hover:shadow-md hover:border-brand-blue/30 transition duration-300 group">
+                    <div
+                        class="w-12 h-12 flex-shrink-0 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm leading-tight">PT DSSP POWER KENDARI</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-20 relative overflow-hidden bg-brand-darker text-white">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-brand-blue rounded-full opacity-20 blur-3xl transform translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-brand-purple rounded-full opacity-20 blur-3xl transform -translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <span class="text-brand-cyan font-semibold uppercase tracking-wider text-sm">Hubungi Kami</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Siap Berkolaborasi dengan PT Maroa Tungga Abadi?</h2>
+            <p class="text-gray-300 text-lg mb-10">Silakan hubungi narahubung utama kami untuk konsultasi penawaran
+                harga, ketersediaan unit armada, maupun pengadaan barang.</p>
+
+            <div
+                class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/10 max-w-xl mx-auto mb-10 shadow-xl">
+                <div class="mb-4">
+                    <p class="text-sm text-gray-300 uppercase tracking-wider">Narahubung Resmi</p>
+                    <h3 class="text-2xl font-bold text-white">SURYA ANDIKA</h3>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                    <a href="https://wa.me/6281295934926?text=Halo%20Bapak%20Surya%20Andika,%20saya%20mendapat%20kontak%20dari%20website%20PT%20Maroa%20Tungga%20Abadi."
+                        target="_blank"
+                        class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold transition duration-300 flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>0812 9593 4926</span>
+                    </a>
+                    <a href="mailto:suryaandika@gmail.com"
+                        class="bg-brand-blue hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition duration-300 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                        <span>suryaandika@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 pt-12 pb-8 border-t border-gray-800 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <img src="Logo Kecil.jpeg" alt="PT Maroa Tungga Abadi"
+                        class="h-10 w-auto object-contain brightness-0 invert opacity-90 mb-4">
+                    <p class="leading-relaxed mb-4">
+                        General Supplier and Contractors. Menyediakan solusi terbaik untuk pengadaan barang, jasa, dan
+                        sewa armada operasional proyek Anda di Sulawesi dan sekitarnya.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Akses Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                        <li><a href="#armada" class="hover:text-white transition">Layanan & Armada</a></li>
+                        <li><a href="#mitra" class="hover:text-white transition">Mitra & Klien</a></li>
+                        <li><a href="#kontak" class="hover:text-white transition">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Kontak Langsung</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-user text-brand-cyan"></i>
+                            <span>Surya Andika</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-brand-cyan"></i>
+                            <span>+62 812-9593-4926</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-brand-cyan"></i>
+                            <span>suryaandika@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 text-center md:flex md:justify-between items-center">
+                <p>&copy; 2026 PT MAROA TUNGGA ABADI. Hak Cipta Dilindungi.</p>
+                <p class="mt-2 md:mt-0 text-xs text-gray-500">General Supplier and Contractors</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
